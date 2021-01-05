@@ -238,7 +238,7 @@ class FrindList extends Component {
     return (
       <div className="App">
         <header>
-          <h1>Friend List</h1>
+          <h1>FriendsBook</h1>
         </header>
         <SearchForm {...searchProps} />
         {friendListArr.length ? (
