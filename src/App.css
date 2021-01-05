@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  background-image: linear-gradient(120deg, #5d4d1e 0%, #fda085 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
   min-height: 100vh;
+}
+header {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+
+/* Search Component start  */
+header,
+form {
+  min-height: 20vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+input.friend-input::placeholder {
+  font-size: 18px;
+  color: #9e9898;
+}
+
+
+form button {
+  color: #ff6f47;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #ff6f47;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+/* List Component start  */
+.friend-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.friend-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.list {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.filter-todo {
+  padding: 1rem;
+}
+.list li {
+  flex: 1;
+}
+
+button.favorite-btn:focus {
+  outline: none !important;
+}
+
+button.trash-btn:focus {
+  outline: none;
+}
+
+.trash-btn,
+.favorite-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.favorite-btn {
+  background: rgb(29 29 29);
+}
+.list-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-star {
+  pointer-events: none;
+}
+
+
+/* not found Component start  */
+.not-found {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* pagination Component start  */
+ul.pagination {
+  flex: 1;
+  justify-content: center;
+}
+
+.page-item.active .page-link {
+  background-color: #1d1d1d;
+  border-color: #1d1d1d;
+  padding: 8px 20px;
+}
+
+
+
+/* Confirmation Component start  */
+.modal-content {
+  color: #000;
+}
+
+/*Custom selector */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #ff6f47;
+  cursor: pointer;
+  pointer-events: none;
+}
+/* Transition */
+/*
+.select:hover::after {
+  transform: scale(1.5);
+}
+*/
+
+.read-me {
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.read-me a {
+  color: inherit;
+  text-decoration: none;
 }
