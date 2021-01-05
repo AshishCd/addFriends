@@ -210,9 +210,7 @@ class FrindList extends Component {
 
     const indexOfLastFriend = currentPage * friendsPerPage;
     const indexOfFirstFriend = indexOfLastFriend - friendsPerPage;
-    const currentFriendList = filteredList
-      .reverse()
-      .slice(indexOfFirstFriend, indexOfLastFriend);
+    const currentFriendList = filteredList.slice(indexOfFirstFriend, indexOfLastFriend);
     const searchProps = {
       onChangeHandler: this.onChangeHandler,
       submitList: this.submitList,
