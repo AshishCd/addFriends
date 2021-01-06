@@ -18,8 +18,8 @@ const SearchForm = ({onChangeHandler, submitList, inputText, filterStatus, onSta
         <div className="select">
           <select onChange={(e) => onStatusChange(e)} name="todos" className="filter-todo">
             <option value="all">All</option>
-            <option value="favorite">Favorite</option>
-            <option value="notSoFav">Not so favorite</option>
+            <option value="favorite">Favourite</option>
+            <option value="notSoFav">Not so favourite</option>
           </select>
         </div>
       </form>
