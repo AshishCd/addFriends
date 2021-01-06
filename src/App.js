@@ -217,14 +217,6 @@ class FrindList extends Component {
       deleteBtnId,
     } = this.state;
 
-    const indexOfLastFriend = currentPage * friendsPerPage;
-    const indexOfFirstFriend = indexOfLastFriend - friendsPerPage;
-    const currentFriendList = filteredList.slice(
-      indexOfFirstFriend,
-      indexOfLastFriend
-    );
-    this.setPagination(currentFriendList);
-
     const searchProps = {
       onChangeHandler: this.onChangeHandler,
       submitList: this.submitList,
@@ -234,10 +226,13 @@ class FrindList extends Component {
     };
 
     const ListProps = {
-      filteredList: currentFriendList,
+      filteredList,
       deleteFromList: this.deleteFromList,
       addFavorite: this.addFavorite,
       inputText,
+      currentPage,
+      friendsPerPage,
+      setPagination: this.setPagination
     };
 
     const paginationProps = {
@@ -246,6 +241,14 @@ class FrindList extends Component {
       paginateFunction: this.paginate,
       currentPage,
     };
+
+    const confirmationModalProps = {
+      handleClose:this.openCloseModal,
+      show: showModal,
+      deleteBtnId:deleteBtnId,
+      friendListArr,
+      deletePermanently: this.deletePermanently
+    }
 
     return (
       <Container>
@@ -264,11 +267,7 @@ class FrindList extends Component {
         {filteredList.length > 4 && <Pagination {...paginationProps} />}
         {showModal && (
           <ConfirmationModal
-            handleClose={this.openCloseModal}
-            show={showModal}
-            deleteBtnId={deleteBtnId}
-            friendListArr={friendListArr}
-            deletePermanently={this.deletePermanently}
+          {...confirmationModalProps}
           />
         )}
       </div>
