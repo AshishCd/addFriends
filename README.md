@@ -11,6 +11,7 @@ Below are the Functionality i have added.
 6) Before deleting any friend i have given functionality of confirmation.
 7) Search and add friend.
 8) If you refresh the page the list will be inact, you don't need to add everything again.
+9) Validation aaded, so you can't add empty list.
 
 Below are some screenshots app in action.
 
