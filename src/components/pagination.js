@@ -14,7 +14,7 @@ const PaginationComponent = ({ friendsPerPage, totalFriends, paginateFunction, c
           return <Pagination.Item onClick={() => paginateFunction(i)} active={i === currentPage} key={i}>{i}</Pagination.Item>;
         })}
       </Pagination>
-      <div className="read-me"><a href="https://github.com/AshishCd/addFriends/" target="_blank">Please read ReadMe file for more information.</a></div>
+      <div className="read-me"><a rel="noreferrer" href="https://github.com/AshishCd/addFriends/" target="_blank">Please read ReadMe file for more information.</a></div>
     </>
   );
 };
