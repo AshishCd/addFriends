@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import {Container} from "react-bootstrap";
 
 //import Component
 import {
@@ -92,7 +93,6 @@ class FrindList extends Component {
     this.openCloseModal(id);
   };
 
-
   //add to fav
   addFavorite = (id) => {
     const addFavoriteArr = this.state.friendListArr.map((item) => {
@@ -175,14 +175,13 @@ class FrindList extends Component {
 
   //opne confirmation modal
   openCloseModal = (id) => {
-    console.log("oye");
     this.setState({
       showModal: !this.state.showModal,
       deleteBtnId: id,
     });
   };
 
-  //delete freind permanently 
+  //delete freind permanently
   deletePermanently = () => {
     const filterList = this.state.friendListArr.filter(
       (i) => i.id !== this.state.deleteBtnId
@@ -194,6 +193,16 @@ class FrindList extends Component {
       },
       () => this.filtereListItem()
     );
+  };
+
+
+  setPagination = (friendListArr) => {
+    const { currentPage } = this.state;
+    if (friendListArr.length === 0 && currentPage > 1) {
+      this.setState({
+        currentPage: currentPage - 1,
+      });
+    }
   };
 
   render() {
@@ -210,7 +219,13 @@ class FrindList extends Component {
 
     const indexOfLastFriend = currentPage * friendsPerPage;
     const indexOfFirstFriend = indexOfLastFriend - friendsPerPage;
-    const currentFriendList = filteredList.slice(indexOfFirstFriend, indexOfLastFriend);
+    const lastFirst = filteredList.reverse();
+    const currentFriendList = lastFirst.slice(
+      indexOfFirstFriend,
+      indexOfLastFriend
+    );
+    this.setPagination(currentFriendList);
+
     const searchProps = {
       onChangeHandler: this.onChangeHandler,
       submitList: this.submitList,
@@ -234,6 +249,7 @@ class FrindList extends Component {
     };
 
     return (
+      <Container>
       <div className="App">
         <header>
           <h1>FriendsBook</h1>
@@ -257,6 +273,7 @@ class FrindList extends Component {
           />
         )}
       </div>
+      </Container>
     );
   }
 }
