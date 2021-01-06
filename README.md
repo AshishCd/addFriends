@@ -6,10 +6,12 @@ Below are the Functionality i have added.
 1) Add Friend's Name on enter press or onClick plus.
 2) Mark friends to favorite.
 3) Delete any friend.
-4)Sort friends usng sorting dropdown.
+4) Sort friends usng sorting dropdown.
 5) Added pagination if friends are more than 4 per page.
 6) Before deleting any friend i have given functionality of confirmation.
 7) Search and add friend.
+8) If you refresh the page the list will be inact, you don't need to add everything again.
+9) Validation aaded, so you can't add empty list.
 
 Below are some screenshots app in action.
 
