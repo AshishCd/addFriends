@@ -4,7 +4,7 @@ import React, {Fragment} from 'react';
 const NotFound = ({text}) => {
     return(
         <Fragment>
-            <div className="not-found">{text}</div>
+            <div className="not-found" data-testid="not-found">{text}</div>
         </Fragment>
     );
 };
