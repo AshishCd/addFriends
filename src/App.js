@@ -219,8 +219,7 @@ class FrindList extends Component {
 
     const indexOfLastFriend = currentPage * friendsPerPage;
     const indexOfFirstFriend = indexOfLastFriend - friendsPerPage;
-    const lastFirst = filteredList.reverse();
-    const currentFriendList = lastFirst.slice(
+    const currentFriendList = filteredList.slice(
       indexOfFirstFriend,
       indexOfLastFriend
     );
